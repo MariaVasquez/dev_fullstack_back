@@ -1,0 +1,28 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RestaurantControllerTest.getRestaurantByIdTest" type="JUnit" factoryName="JUnit" editBeforeRun="true" singleton="false" nameIsGenerated="true">
+    <module name="backend_reserved" />
+    <useClassPathOnly />
+    <extension name="coverage" sample_coverage="false" track_test_folders="true">
+      <pattern>
+        <option name="PATTERN" value="com.backend_reserved.backend_reserved.controller.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+      <pattern>
+        <option name="PATTERN" value="com.backend_reserved.backend_reserved.controllers.ReservationController" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+      <pattern>
+        <option name="PATTERN" value="com.backend_reserved.backend_reserved.controllers.RestaurantController" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="com.backend_reserved.backend_reserved.controller" />
+    <option name="MAIN_CLASS_NAME" value="com.backend_reserved.backend_reserved.controller.RestaurantControllerTest" />
+    <option name="METHOD_NAME" value="getRestaurantByIdTest" />
+    <option name="TEST_OBJECT" value="method" />
+    <option name="PARAMETERS" value="" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
