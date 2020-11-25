@@ -20,11 +20,7 @@ public class ReservationController {
     @Autowired
     CancelReservationService cancelReservationService;
 
-    @PostMapping("createReservation")
-    public BookingResponse<String> createReservation(@RequestBody CreateReservationRest createReservationRest) throws BookingExceptions {
-        return new BookingResponse<>("Succes", String.valueOf(HttpStatus.OK), "OK",
-                reservationService.createReservation(createReservationRest));
-    }
+
 
     @DeleteMapping("cancelReservation/{locator}")
     public BookingResponse<String> cancelateReservation(@PathVariable String locator) throws BookingExceptions {

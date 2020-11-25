@@ -42,33 +42,6 @@ public class ReservationServiceImplementation implements ReservationService {
         return null;
     }
 
-    public String createReservation(CreateReservationRest createReservationRest) throws BookingExceptions {
-
-        final Restaurant restaurantId = restaurantRepository.findById(createReservationRest.getRestaurantId())
-                .orElseThrow(()-> new NotFoundException("RESTAURANT_NOT_FOUND","RESTAURANT_NOT_FOUND"));
-
-        final Turn turnId = turnRepository.findById(createReservationRest.getTurn())
-                .orElseThrow(()-> new NotFoundException("TURN_NOT_FOUND","TURN_NOT_FOUND"));
-
-        String locator = generateLocator(restaurantId, createReservationRest);
-
-        final Reservation reservation = new Reservation();
-        reservation.setLocator(locator);
-        reservation.setPerson(createReservationRest.getPerson());
-        reservation.setDate(createReservationRest.getDate());
-        reservation.setRestaurant(restaurantId);
-        reservation.setTurn(turnId.getName());
-
-        try {
-            reservationRepository.save(reservation);
-        }catch (final Exception e){
-            LOGGER.error("INTERNAL_SERVER_ERROR", e);
-            throw new InternalExceptionError("INTERNAL_SERVER_ERROR", "INTERNAL_SERVER_ERROR");
-        }
-
-        return locator;
-    }
-
     private String generateLocator(Restaurant restaurant, CreateReservationRest createReservationRest) throws BookingExceptions{
         return restaurant.getName() + createReservationRest.getTurn();
     }
