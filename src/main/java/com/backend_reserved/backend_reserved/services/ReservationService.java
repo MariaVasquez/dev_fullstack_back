@@ -14,5 +14,6 @@ public interface ReservationService {
 
     public List<ReservationRest> getReservationts() throws BookingExceptions;
 
+    String createReservation(CreateReservationRest createReservationRest) throws BookingExceptions;
 
 }
